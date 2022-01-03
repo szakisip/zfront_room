@@ -9,4 +9,8 @@ class User < ApplicationRecord
          validates :nickname,presence: true
          validates :password, format: { with: VALID_PASSWORD_REGEX }
 
+  #他テーブルとのアソシエーション
+  has_many :talks
+  # has_many :favorites
+
 end
