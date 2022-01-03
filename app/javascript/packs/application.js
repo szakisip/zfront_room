@@ -4,7 +4,10 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+
+// ### 画面遷移は高速化をコメントアウト ###
+// require("turbolinks").start()
+
 require("@rails/activestorage").start()
 require("channels")
 
