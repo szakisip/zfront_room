@@ -3,7 +3,12 @@
     <li class='list'>
       <%= link_to  talks_path(talk) do %>
         <div class='item-img-content'>
-          <%= talk.talk_text%>
+           <textarea id="text"><%= talk.talk_text%></textarea> 
+           <select id="voice-select"></select>
+           <button id="speak-btn">再生</button>
+           <button id="cancel-btn">停止</button>
+           <button id="pause-btn">一時停止</button>
+           <button id="resume-btn">再開</button>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
@@ -14,12 +19,8 @@
     </li>
   <% end %>
   
-  <textarea id="text">Hello. Nice to meet you.</textarea>
-  <select id="voice-select"></select>
-  <button id="speak-btn">再生</button>
-  <button id="cancel-btn">停止</button>
-  <button id="pause-btn">一時停止</button>
-  <button id="resume-btn">再開</button>
+
+
 </div>
 
 
