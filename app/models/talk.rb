@@ -12,4 +12,8 @@ class Talk < ApplicationRecord
   belongs_to :category
 
 
+  # def favorited?(user)
+  #   favorites.where(user_id: user.id).exists?
+  # end
+
 end

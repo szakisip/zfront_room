@@ -16,12 +16,22 @@
            <%# <button id="pause-btn">一時停止</button>
            <button id="resume-btn">再開</button> %>
         </div>
-        <%= link_to '#' do %>
-          <div class='star-btn'>
-            <%= image_tag "star.png", class:"star-icon" %>
-            <span class='star-count'>0</span>
-          </div>
-        <% end %>
+        <%# <%if @talk.favorite?(current_user)%> 
+          <%# <%= link_to talk_favorites_path(@talk), method: :delete do %> 
+              <%# <span style="color:red;">❤︎</span> %>
+          <%# <%end%> 
+        <%# <%else%> 
+          <%# <%= link_to post_favorites_path(@post), method: :post do %> 
+              <%# <span>❤︎</span> %>
+          <%# <%end%> 
+        <%# <%end%> 
+
+        <%# <%= link_to '#' do %> 
+          <%# <div class='star-btn'> %>
+            <%# <%= image_tag "star.png", class:"star-icon" %>
+            <%# <span class='star-count'>0</span> %>
+          <%# </div> %>
+        <%# <% end %> 
 
       <%# <% end %> 
     </li>

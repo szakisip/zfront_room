@@ -1,4 +1,5 @@
 class TalksController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @talks = Talk.all
     # includes(:user).order("created_at DESC")
@@ -21,4 +22,5 @@ class TalksController < ApplicationController
   def talk_params
     params.require(:talk).permit(:title, :category_id, :talk_text).merge(user_id: current_user.id)
   end
+
 end
