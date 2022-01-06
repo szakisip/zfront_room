@@ -1,42 +1,28 @@
 <div class="messages">
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
+  <% @talks.each do |talk| %>
+    <li class='list' style="list-style: none;">
+      <div class='item-info'>
+        <h3 class='item-name'>
+          タイトル: <%= talk.title %>
+          ,登録ユーザー:<%= talk.user.nickname %>
+        </h3>
       </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        おはよう
-      </div>
-    </div>
-  </div>
+      <%# <%= link_to  talks_path(talk) do %> 
+        <div class='item-img-content'>
+           <textarea class="text-area" id="text"><%= talk.talk_text%></textarea> 
+           <select id="voice-select"></select>
+           <button id="speak-btn">再生</button>
+           <button id="cancel-btn">停止</button>
+           <%# <button id="pause-btn">一時停止</button>
+           <button id="resume-btn">再開</button> %>
+        </div>
 
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
-      </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:47:30
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        こんばんは
-      </div>
-    </div>
-  </div>
+      <%# <% end %> 
+    </li>
+  <% end %>
   
-  <textarea id="text">Hello. Nice to meet you.</textarea>
-  <select id="voice-select"></select>
-  <button id="speak-btn">再生</button>
-  <button id="cancel-btn">停止</button>
-  <button id="pause-btn">一時停止</button>
-  <button id="resume-btn">再開</button>
+
+
 </div>
 
 
