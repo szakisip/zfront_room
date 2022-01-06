@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "talks#index"
   resources :users, only: [:edit, :update]
   resources :talks, only: [:new, :create]
+    resource :favorites, only: [:create, :destroy] 
 end
