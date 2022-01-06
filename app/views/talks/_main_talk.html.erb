@@ -1,21 +1,23 @@
 <div class="messages">
   <% @talks.each do |talk| %>
-    <li class='list'>
-      <%= link_to  talks_path(talk) do %>
+    <li class='list' style="list-style: none;">
+      <div class='item-info'>
+        <h3 class='item-name'>
+          タイトル: <%= talk.title %>
+          ,登録ユーザー:<%= talk.user.nickname %>
+        </h3>
+      </div>
+      <%# <%= link_to  talks_path(talk) do %> 
         <div class='item-img-content'>
-           <textarea id="text"><%= talk.talk_text%></textarea> 
+           <textarea class="text-area" id="text"><%= talk.talk_text%></textarea> 
            <select id="voice-select"></select>
            <button id="speak-btn">再生</button>
            <button id="cancel-btn">停止</button>
-           <button id="pause-btn">一時停止</button>
-           <button id="resume-btn">再開</button>
+           <%# <button id="pause-btn">一時停止</button>
+           <button id="resume-btn">再開</button> %>
         </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= talk.title %>
-          </h3>
-        </div>
-      <% end %>
+
+      <%# <% end %> 
     </li>
   <% end %>
   
