@@ -18,23 +18,8 @@
 ## サイトURL紹介(デプロイ未実施)
 - 
 
-## :globe_with_meridians: インストール方法
-1.このリポジトリを複製<br>
-`$ git clone https://github.com/szakisip/zfront_room.git`
-
-2.インストールしたリポジトリに移動<br>
-`$ cd zfront_room.git`
-
-3.gemをアプリケーションに適用<br>
-`$ bundle install`<br>
-
-4.DBの作成&反映<br>
-`$ rails db:create`<br>
-`$ rails db:migrate`<br>
-
-5.アプリケーションの起動<br>
-`$ rails s`<br>
-:point_right:`http://localhost:3000`
+## 利用方法
+- 右上の新規登録からユーザー登録→右下の投稿ボタンから投稿→再生ボタンで音声読み上げ
 
 ## 目指した課題解決
 - 対面し辛い世の中になり、実際に会うときやオンライン対面するときに面白い話ができるようにする。
@@ -47,18 +32,14 @@
 - ユーザー認証機能
 - 検索機能
 
-<a><img src="assets/images/説明用①.png" height="60px;" /></a>
-
 ## 実装予定の機能
 - いいね機能
 - 検索機能
 
+#
+# テーブル設計
 ## ER図
 ![ER](https://gyazo.com/b23c09ef3d194a8ef132216b162923c8/raw)
-
-
-
-# テーブル設計
 
 ## users テーブル
 
@@ -98,3 +79,25 @@
 
 - belongs_to :user
 - belongs_to :talk
+
+
+
+
+#
+# globe_with_meridians: インストール方法
+1.このリポジトリを複製<br>
+`$ git clone https://github.com/szakisip/zfront_room.git`
+
+2.インストールしたリポジトリに移動<br>
+`$ cd zfront_room.git`
+
+3.gemをアプリケーションに適用<br>
+`$ bundle install`<br>
+
+4.DBの作成&反映<br>
+`$ rails db:create`<br>
+`$ rails db:migrate`<br>
+
+5.アプリケーションの起動<br>
+`$ rails s`<br>
+:point_right:`http://localhost:3000`
