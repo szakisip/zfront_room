@@ -16,6 +16,12 @@
            <%# <button id="pause-btn">一時停止</button>
            <button id="resume-btn">再開</button> %>
         </div>
+        <%= link_to '#' do %>
+          <div class='star-btn'>
+            <%= image_tag "star.png", class:"star-icon" %>
+            <span class='star-count'>0</span>
+          </div>
+        <% end %>
 
       <%# <% end %> 
     </li>

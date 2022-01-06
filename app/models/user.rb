@@ -11,6 +11,6 @@ class User < ApplicationRecord
 
   #他テーブルとのアソシエーション
   has_many :talks
-  # has_many :favorites
+  has_many :favorites
 
 end

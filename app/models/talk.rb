@@ -6,7 +6,7 @@ class Talk < ApplicationRecord
   #アソシエーション
   #他テーブルとのアソシエーション
   belongs_to :user
-  # has_one :favorites
+  has_many :favorites
   
   # アクティブハッシュとのアソシエーション
   belongs_to :category
