@@ -28,7 +28,7 @@ class FavoritesController < ApplicationController
     @post_favorite = Favorite.find(user_id: current_user.id, post_id: params[:post_id])
     @post_favorite.destroy
     result = [done: "destroy",user_id: current_user.id, post_id:params[:post_id]]
-    redirect_to root_path(params
+    redirect_to root_path(params)
   end
 
   private
