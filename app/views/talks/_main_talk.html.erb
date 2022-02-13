@@ -4,7 +4,7 @@
       <div class='item-info'>
         <h3 class='item-name'>
           タイトル: <%= talk.title %>
-          ,登録ユーザー:<%= talk.user.nickname %>
+          ,<%= talk.user.nickname %>
         </h3>
       </div>
       <%# <%= link_to  talks_path(talk) do %> 
@@ -27,13 +27,28 @@
         <%# <%end%> 
 
         <%# <%= link_to '#' do %> 
-          <%# <div class='star-btn'> %>
-            <%# <%= image_tag "star.png", class:"star-icon" %>
-            <%# <span class='star-count'>0</span> %>
-          <%# </div> %>
-        <%# <% end %> 
-
-      <%# <% end %> 
+        <% if user_signed_in? %>
+          <% if current_user.already_favorited?(talk) %>
+            <%= link_to talk_favorites_path(talk), method: :delete do %>
+              <div class='star-btn'>
+                <%= image_tag "star_on.png", class:"star-icon" %>
+                <%= talk.favorites.count %>
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to talk_favorites_path(talk), method: :post do %>
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+                <%= talk.favorites.count %>
+              </div>
+            <% end %>
+          <% end %>
+        <% else %>
+           <div class='star-btn'>
+            <%= image_tag "star_on.png", class:"star-icon" %>
+            <%= talk.favorites.count %>
+            </div>
+        <% end %>
     </li>
   <% end %>
   

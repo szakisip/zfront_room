@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   #他テーブルとのアソシエーション
   has_many :talks, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
 
+  #いいねしているか判断するメソッド
+  def already_favorited?(talk)
+    self.favorites.exists?(talk_id: talk.id)
+  end
 end

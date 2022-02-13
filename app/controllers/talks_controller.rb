@@ -1,7 +1,9 @@
 class TalksController < ApplicationController
+  # before_action :authenticate_user!
   before_action :authenticate_user!, except: [:index]
   def index
     @talks = Talk.all
+    @favorite = Talk.new
     # includes(:user).order("created_at DESC")
   end
 
