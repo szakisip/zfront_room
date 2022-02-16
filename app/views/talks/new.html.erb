@@ -23,7 +23,10 @@
           エピソードトーク内容
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :talk_text, class:"items-text", id:"item-info", placeholder:"トーク内容（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :talk_text, class:"items-text", id:"text", placeholder:"トーク内容（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+           <select id="voice-select"></select>
+           <button id="speak-btn">再生</button>
+           <button id="cancel-btn">停止</button>
       </div>
     </div>
     <%# 商品の詳細 %>
